@@ -40,3 +40,14 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #a06b10 #0b0f14;
 }
+
+/* Pulse animation for loading state */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}

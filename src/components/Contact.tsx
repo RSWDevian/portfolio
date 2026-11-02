@@ -1,17 +1,6 @@
 import { Box, Typography, Chip } from "@mui/material";
-import { GitHub, X, LinkedIn, YouTube } from "@mui/icons-material";
-
-const MediumIcon = () => (
-  <svg
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    aria-label="Medium"
-  >
-    <path d="M12 2c5.523 0 8.424 2.835 8.424 6.337S17.523 14.674 12 14.674c-5.522 0-8.423-2.835-8.423-6.337S6.478 2 12 2zm0 2c-3.535 0-5.378 1.738-5.378 4.337S8.465 12.674 12 12.674s5.378-1.738 5.378-4.337S15.535 4 12 4zm0 5.173c-1.485 0-2.263.808-2.263 2.007 0 1.18.769 2.166 2.263 2.166s2.263-.986 2.263-2.166c0-1.199-.778-2.007-2.263-2.007zm0 2.146c-1.212 0-1.846.493-1.846 1.222 0 .71.625 1.301 1.846 1.301s1.846-.591 1.846-1.301c0-.729-.634-1.222-1.846-1.222z" />
-  </svg>
-);
+import { GitHub, X, LinkedIn } from "@mui/icons-material";
+import BookingWidget from "./BookingWidget";
 
 const platformChips = [
   { label: "GitHub", Icon: GitHub, href: "https://github.com/RSWDevian" },
@@ -42,59 +31,10 @@ export default function Contact() {
           maxWidth: 600,
         }}
       >
-        If you've read this far, you might be interested in what I do.
+        Made it this far and interested in what i do?
       </Typography>
 
-      <Box
-        component="a"
-        href="https://calendly.com/RSWDevian"
-        target="_blank"
-        rel="noopener noreferrer"
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          gap: 0.5,
-          bgcolor: "background.paper",
-          border: "1px solid",
-          borderColor: "divider",
-          borderRadius: "10px",
-          padding: "6px 12px",
-          cursor: "pointer",
-          textDecoration: "none",
-          transition: "all 0.2s ease",
-          "&:hover": {
-            borderColor: "primary.main",
-            transform: "translateY(-1px)",
-          },
-        }}
-      >
-        <Box
-          sx={{
-            width: 28,
-            height: 28,
-            borderRadius: "50%",
-            overflow: "hidden",
-            border: "2px solid",
-            borderColor: "divider",
-          }}
-        >
-          <img
-            src="/myImage.jpg"
-            alt="AGR"
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-        </Box>
-        <Typography
-          sx={{
-            fontWeight: 600,
-            fontSize: "0.85rem",
-            color: "text.primary",
-            whiteSpace: "nowrap",
-          }}
-        >
-          Book a Free Call
-        </Typography>
-      </Box>
+      <BookingWidget namespace="15min" link="abhirup-guha-roy-c1jdu5/15min" />
 
       <Box sx={{ width: "100%", maxWidth: 500, mt: 0.5, mb: 0.5 }}>
         <hr

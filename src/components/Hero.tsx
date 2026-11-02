@@ -1,8 +1,18 @@
 import { Box, Container, Stack, Typography, Avatar } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
 
 export default function Hero() {
   const theme = useTheme();
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "15min" });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    })();
+  }, []);
+
   return (
     <Box id="hero" sx={{ height: "auto", paddingTop: 8, marginBottom: 4 }}>
       <Container maxWidth="md">

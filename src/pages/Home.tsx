@@ -4,8 +4,9 @@ import Experience from "@/components/Experience";
 import About from "@/components/About";
 import Education from "@/components/Education";
 import Skills from "@/components/Skills";
-import Contact from "@/components/Contact";
 import Works from "@/components/Work";
+// import GitHubContribution from "@/components/GitHubContribution";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Education />
         <Skills />
         <Works />
+        {/* <GitHubContribution /> */}
         <Contact />
       </Container>
     </main>
