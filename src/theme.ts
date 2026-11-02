@@ -19,11 +19,11 @@ const theme = createTheme({
   palette: {
     mode: "dark",
     background: {
-      default: "#0b0f19",
+      default: "#040507",
       paper: "#161f30",
     },
     primary: {
-      main: "#a06b10",
+      main: "#cfcac1",
       light: "rgba(36, 144, 168, 0.2)",
     },
     secondary: {

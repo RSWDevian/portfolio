@@ -49,7 +49,7 @@ export default function Works() {
               key={work.id}
               sx={{
                 position: "relative",
-                borderRadius: 2,
+                borderRadius: 1,
                 background: "background.paper",
                 border: "1px solid",
                 borderColor: "divider",
