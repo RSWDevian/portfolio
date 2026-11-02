@@ -1,12 +1,9 @@
-"use client"
-
 import {
   Box,
   Typography,
   IconButton,
   Collapse,
-  Divider,
-  Avatar
+  Avatar,
 } from "@mui/material";
 import { ExpandMore, ExpandLess } from "@mui/icons-material";
 import { useState } from "react";
@@ -16,7 +13,6 @@ export default function EducationItem({ data }: any) {
 
   return (
     <Box sx={{ mb: 2 }}>
-      {/* Content */}
       <Box sx={{ flex: 1 }}>
         <Box
           sx={{

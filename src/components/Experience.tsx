@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import ExperienceItem from "./ExperienceItem";
-import { experiences } from "../json/data";
+import { experiences } from "@/data/data";
 
 export default function Experience() {
   return (
@@ -13,5 +13,5 @@ export default function Experience() {
         <ExperienceItem key={index} data={item} />
       ))}
     </Box>
-  )
+  );
 }

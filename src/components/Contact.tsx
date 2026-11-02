@@ -1,5 +1,3 @@
-"use client"
-
 import { Box, Typography, Link, Chip } from "@mui/material";
 
 export default function Contact() {

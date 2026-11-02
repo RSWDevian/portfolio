@@ -1,15 +1,10 @@
-"use client";
-
 import { Box, Stack, IconButton, Tooltip } from "@mui/material";
 import { Brightness4, Brightness7 } from "@mui/icons-material";
-import { navItems, socialItems } from "@/app/json/data";
+import { navItems, socialItems } from "@/data/data";
 import { useTheme } from "@mui/material/styles";
-import { useContext } from "react";
-// import { ColorModeContext } from "../providers";
 
 export default function FloatingNav() {
   const theme = useTheme();
-  // const colorMode = useContext(ColorModeContext);
 
   return (
     <Box
@@ -32,7 +27,6 @@ export default function FloatingNav() {
         }}
       >
         <Stack direction="row" spacing={1} alignItems="center">
-          {/* Section 1: Navigation Links */}
           {navItems.map((item) => (
             <Tooltip key={item.label} title={item.label} placement="top">
               <IconButton
@@ -53,7 +47,6 @@ export default function FloatingNav() {
             </Tooltip>
           ))}
 
-          {/* Divider */}
           <Box
             sx={{
               width: "1px",
@@ -63,7 +56,6 @@ export default function FloatingNav() {
             }}
           />
 
-          {/* Section 2: Social Links */}
           {socialItems.map((item) => (
             <Tooltip key={item.label} title={item.label} placement="top">
               <IconButton
@@ -86,7 +78,6 @@ export default function FloatingNav() {
             </Tooltip>
           ))}
 
-          {/* Divider */}
           <Box
             sx={{
               width: "1px",
@@ -96,10 +87,8 @@ export default function FloatingNav() {
             }}
           />
 
-          {/* Section 3: Theme Toggle */}
           <Tooltip title="Toggle Theme" placement="top">
             <IconButton
-              // onClick={colorMode.toggleColorMode}
               size="small"
               sx={{
                 color: "text.secondary",

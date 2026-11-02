@@ -1,7 +1,5 @@
-"use client"
-
 import { Box, Typography, Chip } from "@mui/material";
-import { skills } from "../json/data";
+import { skills } from "@/data/data";
 
 export default function Skills() {
   return (

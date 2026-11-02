@@ -1,8 +1,6 @@
-"use client"
-
 import { Box, Stack, Typography, Chip, Button } from "@mui/material";
 import { ArrowOutward } from "@mui/icons-material";
-import { works } from "../json/data";
+import { works } from "@/data/data";
 
 export default function Works() {
   return (
@@ -37,7 +35,6 @@ export default function Works() {
               overflow: "hidden",
             }}
           >
-            {/* Image slot */}
             <Box
               sx={{
                 height: 180,

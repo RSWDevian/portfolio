@@ -11,7 +11,7 @@ const theme = createTheme({
     secondary: { main: "#f6c453" },
   },
   typography: {
-    fontFamily: "\"Fraunces\", \"General Sans\", system-ui, -apple-system, sans-serif",
+    fontFamily: '"Fraunces", "General Sans", system-ui, -apple-system, sans-serif',
     h1: { fontWeight: 700, letterSpacing: "-0.02em" },
     h2: { fontWeight: 600, letterSpacing: "-0.02em" },
     h3: { fontWeight: 600 },

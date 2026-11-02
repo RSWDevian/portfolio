@@ -1,8 +1,6 @@
-"use client"
-
 import { Box, Typography } from "@mui/material";
 import EducationItem from "./EducationItem";
-import { education } from "../json/data";
+import { education } from "@/data/data";
 
 export default function Education() {
   return (
