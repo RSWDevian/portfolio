@@ -19,12 +19,13 @@ export default function BlogList() {
               <Chip
                 label={blog.name}
                 sx={{
-                  bgcolor: "rgba(125, 211, 252, 0.1)",
+                  bgcolor: "primary.light",
                   color: "primary.main",
-                  border: "1px solid rgba(125, 211, 252, 0.3)",
+                  border: "1px solid",
+                  borderColor: "primary.light",
                   cursor: "pointer",
                   "&:hover": {
-                    bgcolor: "rgba(14, 16, 16, 0.2)",
+                    bgcolor: "primary.light",
                     borderColor: "primary.main",
                   },
                 }}

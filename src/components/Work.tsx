@@ -2,16 +2,25 @@ import { Box, Stack, Typography, Chip, Button } from "@mui/material";
 import { ArrowOutward } from "@mui/icons-material";
 import { works } from "@/data/data";
 
+const TOP_N = 4;
+
+const linkLabelMap: Record<string, string> = {
+  Visit: "Website",
+  Website: "Website",
+  Post: "Website",
+  CaseStudy: "Website",
+  Repo: "Source",
+  RepoLink: "Source",
+};
+
 export default function Works() {
+  const topWorks = [...works].reverse().slice(0, TOP_N);
+
   return (
-    <Box sx={{ py: 6 }} id="works">
-      <Stack spacing={1} sx={{ mb: 4 }}>
-        <Typography variant="h5" fontWeight={700}>
-          My Works
-        </Typography>
-        <Typography sx={{ color: "text.secondary", maxWidth: 700 }}>
-          Selected projects with a focus on robust systems, clean execution, and
-          real-world constraints.
+    <Box sx={{ py: 4 }} id="works">
+      <Stack spacing={1} sx={{ mb: 3 }}>
+        <Typography variant="h5" fontSize={18} fontWeight={700} color="text.secondary" sx={{ textTransform: "uppercase" }}>
+          Projects
         </Typography>
       </Stack>
 
@@ -19,107 +28,216 @@ export default function Works() {
         sx={{
           display: "grid",
           gridTemplateColumns: { xs: "1fr", md: "repeat(2, 1fr)" },
-          gap: 3,
+          gap: 2,
         }}
       >
-        {[...works].reverse().map((work) => (
-          <Box
-            key={work.id}
-            sx={{
-              position: "relative",
-              borderRadius: 3,
-              background:
-                "linear-gradient(145deg, rgba(17,23,34,0.9), rgba(10,14,22,0.9))",
-              border: "1px solid rgba(125, 211, 252, 0.12)",
-              boxShadow: "0 20px 60px rgba(0, 0, 0, 0.35)",
-              overflow: "hidden",
-            }}
-          >
+        {topWorks.map((work) => {
+          const websiteLink = work.links.find(
+            (l) =>
+              linkLabelMap[l.label] === "Website" ||
+              l.label.toLowerCase().includes("visit") ||
+              l.label.toLowerCase().includes("case")
+          );
+          const sourceLink = work.links.find(
+            (l) =>
+              linkLabelMap[l.label] === "Source" ||
+              l.label.toLowerCase().includes("repo")
+          );
+
+          return (
             <Box
+              key={work.id}
               sx={{
-                height: 180,
-                width: "100%",
-                backgroundImage: `url(${work.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                borderBottom: "1px solid rgba(125, 211, 252, 0.08)",
+                position: "relative",
+                borderRadius: 2,
+                background: "background.paper",
+                border: "1px solid",
+                borderColor: "divider",
+                overflow: "hidden",
+                transition: "all 0.2s ease",
+                "&:hover": {
+                  borderColor: "primary.light",
+                  boxShadow: "0 8px 24px rgba(0, 0, 0, 0.25)",
+                },
               }}
-            />
+            >
+              <Box
+                sx={{
+                  height: 120,
+                  width: "100%",
+                  backgroundImage: `url(${work.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  borderBottom: "1px solid",
+                  borderColor: "divider",
+                }}
+              />
 
-            <Box sx={{ padding: 3 }}>
-              {work.featured && (
-                <Chip
-                  label="Featured"
-                  size="small"
-                  sx={{
-                    position: "absolute",
-                    top: 16,
-                    right: 16,
-                    bgcolor: "rgba(251,191,36,0.12)",
-                    color: "secondary.main",
-                    border: "1px solid rgba(251,191,36,0.3)",
-                    fontWeight: 600,
-                  }}
-                />
-              )}
+              <Box sx={{ padding: 1.5, pt: 1 }}>
+                {work.featured && (
+                  <Chip
+                    label="Featured"
+                    size="small"
+                    sx={{
+                      position: "absolute",
+                      top: 8,
+                      right: 8,
+                      bgcolor: "secondary.light",
+                      color: "secondary.main",
+                      border: "1px solid",
+                      borderColor: "secondary.light",
+                      fontWeight: 600,
+                      fontSize: "0.7rem",
+                    }}
+                  />
+                )}
 
-              <Stack spacing={1.5}>
-                <Typography sx={{ color: "text.secondary" }}>
-                  {work.year} • {work.role}
-                </Typography>
+                <Stack spacing={0.5}>
+                  <Typography
+                    variant="caption"
+                    color="text.disabled"
+                    sx={{ fontSize: "0.75rem" }}
+                  >
+                    {work.year} • {work.role}
+                  </Typography>
 
-                <Typography variant="h6" fontWeight={700}>
-                  {work.title}
-                </Typography>
+                  <Typography
+                    variant="subtitle1"
+                    fontWeight={600}
+                    sx={{ fontSize: "0.95rem", mb: 0.5 }}
+                  >
+                    {work.title}
+                  </Typography>
 
-                <Typography sx={{ color: "text.secondary", lineHeight: 1.7 }}>
-                  {work.summary}
-                </Typography>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ fontSize: "0.8rem", lineHeight: 1.5, mb: 1 }}
+                  >
+                    {work.summary}
+                  </Typography>
 
-                <Stack direction="row" spacing={1} flexWrap="wrap">
-                  {work.tags.map((tag, idx) => (
-                    <Chip
-                      key={idx}
-                      size="small"
-                      label={tag}
-                      sx={{
-                        bgcolor: "rgba(125, 211, 252, 0.08)",
-                        color: "primary.main",
-                        border: "1px solid rgba(125, 211, 252, 0.2)",
-                        fontWeight: 500,
-                      }}
-                    />
-                  ))}
-                </Stack>
-
-                <Stack direction="row" spacing={1.5} sx={{ pt: 1 }}>
-                  {work.links.map((link, idx) => (
-                    <Button
-                      key={idx}
-                      href={link.href}
-                      endIcon={<ArrowOutward fontSize="small" />}
-                      sx={{
-                        color: "text.primary",
-                        border: "1px solid rgba(255,255,255,0.12)",
-                        textTransform: "none",
-                        borderRadius: 2,
-                        px: 1.5,
-                        py: 0.5,
-                        "&:hover": {
-                          borderColor: "primary.main",
+                  <Stack direction="row" spacing={0.5} flexWrap="wrap">
+                    {work.tags.map((tag, idx) => (
+                      <Chip
+                        key={idx}
+                        size="small"
+                        label={tag}
+                        sx={{
+                          bgcolor: "primary.light",
                           color: "primary.main",
-                          backgroundColor: "rgba(125, 211, 252, 0.06)",
-                        },
-                      }}
-                    >
-                      {link.label}
-                    </Button>
-                  ))}
+                          border: "1px solid",
+                          borderColor: "primary.light",
+                          borderTopLeftRadius: 0,
+                          borderBottomRightRadius: 0,
+                          borderTopRightRadius: 2,
+                          borderBottomLeftRadius: 2,
+                          fontWeight: 500,
+                          fontSize: "0.7rem",
+                          px: 0.75,
+                          py: 0.3,
+                        }}
+                      />
+                    ))}
+                  </Stack>
+
+                  <Stack direction="row" spacing={0.5} sx={{ pt: 0.5 }}>
+                    {websiteLink && (
+                      <Button
+                        component="a"
+                        href={websiteLink.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        size="small"
+                        sx={{
+                          flex: 1,
+                          color: "text.primary",
+                          border: "1px solid",
+                          borderColor: "divider",
+                          textTransform: "none",
+                          borderRadius: 2,
+                          px: 1,
+                          py: 0.35,
+                          fontSize: "0.8rem",
+                          fontWeight: 500,
+                          "&:hover": {
+                            borderColor: "primary.main",
+                            color: "primary.main",
+                            backgroundColor: "primary.light",
+                          },
+                        }}
+                      >
+                        {linkLabelMap[websiteLink.label] || websiteLink.label}
+                        <ArrowOutward fontSize="small" />
+                      </Button>
+                    )}
+                    {sourceLink && (
+                      <Button
+                        component="a"
+                        href={sourceLink.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        size="small"
+                        sx={{
+                          flex: 1,
+                          color: "text.primary",
+                          border: "1px solid",
+                          borderColor: "divider",
+                          textTransform: "none",
+                          borderRadius: 2,
+                          px: 1,
+                          py: 0.35,
+                          fontSize: "0.8rem",
+                          fontWeight: 500,
+                          "&:hover": {
+                            borderColor: "primary.main",
+                            color: "primary.main",
+                            backgroundColor: "primary.light",
+                          },
+                        }}
+                      >
+                        {linkLabelMap[sourceLink.label] || sourceLink.label}
+                        <ArrowOutward fontSize="small" />
+                      </Button>
+                    )}
+                  </Stack>
                 </Stack>
-              </Stack>
+              </Box>
             </Box>
-          </Box>
-        ))}
+          );
+        })}
+      </Box>
+
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          mt: 2,
+        }}
+      >
+        <Button
+          component="a"
+          href="/works"
+          startIcon={<ArrowOutward fontSize="small" />}
+          sx={{
+            color: "primary.main",
+            border: "1px solid",
+            borderColor: "primary.light",
+            textTransform: "none",
+            borderRadius: 2,
+            px: 1.5,
+            py: 0.5,
+            fontSize: "0.9rem",
+            fontWeight: 500,
+            "&:hover": {
+              borderColor: "primary.main",
+              color: "primary.main",
+              backgroundColor: "primary.light",
+            },
+          }}
+        >
+          View All
+        </Button>
       </Box>
     </Box>
   );

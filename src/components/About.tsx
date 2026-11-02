@@ -1,28 +1,17 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
+import SocialStack from "./SocialStack";
 
 export default function About() {
   return (
-    <Box
+    <Stack
       id="about"
       sx={{
         position: "relative",
-        height: "auto",
-        display: "flex",
-        alignItems: "center",
+        width: "100%",
         marginBottom: 4,
       }}
     >
       <Stack sx={{ width: "100%" }}>
-        <Typography
-          variant="h5"
-          sx={{
-            fontWeight: 700,
-            letterSpacing: "-0.01em",
-          }}
-        >
-          About
-        </Typography>
-
         <Typography
           sx={{
             fontSize: { xs: 16, md: 18 },
@@ -31,10 +20,11 @@ export default function About() {
             maxWidth: 700,
           }}
         >
-          I am a pre-final year undergrad at Jadavpur University. I love to
-          build systems over real-world problems from scratch.
+          Building intelligent systems and scalable products from first
+          principles.
         </Typography>
       </Stack>
-    </Box>
+      <SocialStack />
+    </Stack>
   );
 }

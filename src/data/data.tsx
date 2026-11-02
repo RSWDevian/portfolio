@@ -1,10 +1,8 @@
 import {
   Home,
+  Work,
   Article,
-  Description,
   Mail,
-  GitHub,
-  LinkedIn,
 } from "@mui/icons-material";
 import { SvgIconProps } from "@mui/material";
 
@@ -16,15 +14,12 @@ interface NavItem {
 
 export const navItems: NavItem[] = [
   { icon: Home, label: "Home", href: "/" },
+  { icon: Work, label: "Work", href: "/experience" },
   { icon: Article, label: "Blogs", href: "/blogs" },
-  { icon: Description, label: "Research Papers", href: "/research" },
-];
-
-export const socialItems = [
-  { icon: GitHub, label: "GitHub", href: "https://github.com/RSWDevian" },
-  { icon: LinkedIn, label: "LinkedIn", href: "https://www.linkedin.com/in/abhirupguharoy/" },
   { icon: Mail, label: "Mail", href: "mailto:abhirup.g.r.work.@gmail.com" },
 ];
+
+export const socialItems: any[] = [];
 
 interface ExperienceItem {
   id: number;

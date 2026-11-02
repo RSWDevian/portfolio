@@ -20,7 +20,7 @@ export default function ExperienceItem({ data }: any) {
           top: 0,
           bottom: 0,
           width: "2px",
-          bgcolor: "grey.800",
+          bgcolor: "neutral.main",
         }}
       />
 
@@ -29,7 +29,7 @@ export default function ExperienceItem({ data }: any) {
           width: 18,
           height: 18,
           borderRadius: "50%",
-          bgcolor: "grey.500",
+          bgcolor: "text.disabled",
           mt: 1,
           mr: 3,
           zIndex: 1,
@@ -52,8 +52,9 @@ export default function ExperienceItem({ data }: any) {
               sx={{
                 width: 44,
                 height: 44,
-                border: "1px solid rgba(125, 211, 252, 0.2)",
-                bgcolor: "grey.900",
+                border: "1px solid",
+                borderColor: "primary.light",
+                bgcolor: "background.paper",
               }}
             />
             <Box>
@@ -61,11 +62,11 @@ export default function ExperienceItem({ data }: any) {
                 {data.company}
               </Typography>
 
-              <Typography variant="body2" color="grey.400">
+              <Typography variant="body2" color="text.disabled">
                 {data.role}
               </Typography>
 
-              <Typography variant="caption" color="grey.600">
+              <Typography variant="caption" color="text.secondary">
                 {data.location} • {data.dateRange}
               </Typography>
             </Box>
@@ -82,7 +83,7 @@ export default function ExperienceItem({ data }: any) {
               <Typography
                 key={index}
                 variant="body2"
-                color="grey.400"
+                color="text.disabled"
                 sx={{ mb: 1 }}
               >
                 • {point}

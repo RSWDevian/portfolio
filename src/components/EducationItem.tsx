@@ -1,16 +1,10 @@
 import {
   Box,
   Typography,
-  IconButton,
-  Collapse,
   Avatar,
 } from "@mui/material";
-import { ExpandMore, ExpandLess } from "@mui/icons-material";
-import { useState } from "react";
 
 export default function EducationItem({ data }: any) {
-  const [open, setOpen] = useState(false);
-
   return (
     <Box sx={{ mb: 2 }}>
       <Box sx={{ flex: 1 }}>
@@ -29,8 +23,9 @@ export default function EducationItem({ data }: any) {
               sx={{
                 width: 44,
                 height: 44,
-                border: "1px solid rgba(125, 211, 252, 0.2)",
-                bgcolor: "grey.900",
+                border: "1px solid",
+                borderColor: "primary.light",
+                bgcolor: "background.paper",
               }}
             />
             <Box>
@@ -38,11 +33,11 @@ export default function EducationItem({ data }: any) {
                 {data.institution}
               </Typography>
 
-              <Typography variant="body2" color="grey.400">
+              <Typography variant="body2" color="text.disabled">
                 {data.degree} - {data.field}
               </Typography>
 
-              <Typography variant="caption" color="grey.600">
+              <Typography variant="caption" color="text.secondary">
                 {data.location} • {data.dateRange}
               </Typography>
             </Box>
