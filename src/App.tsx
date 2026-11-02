@@ -7,6 +7,7 @@ import BlogList from "@/pages/BlogList";
 import BlogDetail from "@/pages/BlogDetail";
 import Experience from "@/pages/Experience";
 import Works from "@/pages/Works";
+import AchievementsPage from "@/pages/Achievements";
 import NotFound from "@/pages/NotFound";
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/blogs/:slug" element={<BlogDetail />} />
         <Route path="/experience" element={<Experience />} />
         <Route path="/works" element={<Works />} />
+        <Route path="/achievements" element={<AchievementsPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </ThemeProvider>

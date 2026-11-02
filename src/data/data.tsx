@@ -136,6 +136,55 @@ export const skills: string[] = [
   "Pixhawk",
 ];
 
+export interface AchievementItem {
+  id: number;
+  title: string;
+  issuer: string;
+  date: string;
+  type: "Certification" | "Achievement";
+  link?: string;
+}
+
+export const achievements: AchievementItem[] = [
+  {
+    id: 1,
+    title: "Winner — National Robotics Championship",
+    issuer: "TechFest, IIT",
+    date: "2025",
+    type: "Achievement",
+    link: "https://www.linkedin.com/in/abhirupguharoy",
+  },
+  {
+    id: 2,
+    title: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    date: "2025",
+    type: "Certification",
+    link: "https://aws.amazon.com/verification",
+  },
+  {
+    id: 3,
+    title: "Best Hardware Project Award",
+    issuer: "Jadavpur University Mechatronics Club",
+    date: "2024",
+    type: "Achievement",
+  },
+  {
+    id: 4,
+    title: "SolidWorks Associate (CSWA)",
+    issuer: "Dassault Systèmes",
+    date: "2024",
+    type: "Certification",
+  },
+  {
+    id: 5,
+    title: "Hackathon Finalist — Smart India Hackathon",
+    issuer: "Government of India",
+    date: "2023",
+    type: "Achievement",
+  },
+];
+
 interface WorkLink {
   label: string;
   href: string;
