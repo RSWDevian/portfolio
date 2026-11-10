@@ -59,11 +59,11 @@ const socialLinks: SocialLink[] = [
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/abhirupguharoy/",
   },
-  {
-    Icon: YouTube,
-    label: "YouTube",
-    href: "https://youtube.com/@RSWDevian",
-  },
+  // {
+  //   Icon: YouTube,
+  //   label: "YouTube",
+  //   href: "https://youtube.com/@RSWDevian",
+  // },
   {
     Icon: CodeforcesIcon,
     label: "Codeforces",

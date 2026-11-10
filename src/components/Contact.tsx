@@ -19,7 +19,7 @@ export default function Contact() {
         alignItems: "center",
         gap: 2,
         borderTop: "1px solid",
-        marginBottom: 8,
+        paddingBottom: 14,
         borderColor: "divider",
       }}
     >
@@ -113,7 +113,7 @@ export default function Contact() {
 
       <Box
         component="a"
-        href="https://drive.google.com/file/d/1RSWDevian/view"
+        href="https://drive.google.com/file/d/1m73f8b_m_gt4JV-3H-Bd-akOnJzsmia4/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
         sx={{

@@ -33,7 +33,7 @@ export default function Hero() {
             }}
           >
             <Avatar
-              src="/myImage.jpg"
+              src={`${import.meta.env.BASE_URL}myImage.jpg`}
               alt="AGR"
               sx={{
                 width: "100%",

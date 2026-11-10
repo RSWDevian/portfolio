@@ -7,7 +7,9 @@ export default function Experience() {
 
   return (
     <Box>
-      <Stack spacing={1} sx={{marginBottom: 2}}>
+      <Stack spacing={1} sx={{
+        marginBottom: 2
+      }}>
         <Typography variant="caption" fontSize={18} fontWeight={700} color="text.secondary" sx={{ textTransform: "uppercase", letterSpacing: 1 }}>
           Work Experience
         </Typography>
@@ -40,18 +42,20 @@ export default function Experience() {
                 >
                   {item.company}
                 </Typography>
-                <Chip
-                  label="Working"
-                  size="small"
-                  sx={{
-                    color: "white",
-                    bgcolor: "primary.main",
-                    border: "none",
-                    height: 18,
-                    fontSize: "0.7rem",
-                    ml: 0.5,
-                  }}
-                />
+                {item.current && (
+                  <Chip
+                    label="Working"
+                    size="small"
+                    sx={{
+                      color: "white",
+                      bgcolor: "primary.secondary",
+                      border: "none",
+                      height: 18,
+                      fontSize: "0.7rem",
+                      ml: 0.5,
+                    }}
+                  />
+                )}
               </Stack>
               <Typography
                 variant="caption"

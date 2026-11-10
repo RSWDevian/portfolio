@@ -1,4 +1,4 @@
-import { Box, Stack, Typography, Chip, Button } from "@mui/material";
+import { Box, Container, Stack, Typography, Chip, Button } from "@mui/material";
 import { ArrowOutward } from "@mui/icons-material";
 import { works } from "@/data/data";
 
@@ -13,25 +13,20 @@ const linkLabelMap: Record<string, string> = {
 
 export default function WorksPage() {
   return (
-    <Box sx={{ py: 6, px: { xs: 2, md: 4 } }}>
-      <Stack spacing={3}>
-        <Box>
-          <Typography variant="h4" fontWeight={700} color="primary.main">
-            Projects
-          </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-            A collection of projects spanning robotics, embedded systems,
-            blockchain, and AI/ML.
-          </Typography>
-        </Box>
+    <Box sx={{ py: 6 }}>
+      <Container maxWidth="md">
+        <Stack spacing={3}>
+          <Box>
+            <Typography variant="h4" fontWeight={700}>
+              Projects
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+              A collection of projects spanning robotics, embedded systems,
+              blockchain, and AI/ML.
+            </Typography>
+          </Box>
 
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
-            gap: 3,
-          }}
-        >
+          <Stack spacing={2}>
           {[...works].reverse().map((work) => {
             const websiteLink = work.links.find(
               (l) =>
@@ -220,8 +215,9 @@ export default function WorksPage() {
               </Box>
             );
           })}
-        </Box>
-      </Stack>
+          </Stack>
+        </Stack>
+      </Container>
     </Box>
   );
 }

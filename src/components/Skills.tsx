@@ -37,9 +37,10 @@ export default function Skills() {
                 py: 0.5,
                 "&:hover": {
                   bgcolor: "primary.main",
-                  color: "white",
+                  color: "black",
                   borderColor: "primary.main",
                   transform: "scale(1.1)",
+                  transition: "all 0.2s ease-in-out",
                 },
               }}
             />

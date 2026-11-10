@@ -16,7 +16,7 @@ export default function Achievements() {
           color="text.secondary"
           sx={{ textTransform: "uppercase", letterSpacing: 1 }}
         >
-          Achivements &amp; Certifications
+          Achievements &amp; Certifications
         </Typography>
 
         {topTwo.map((item) => (

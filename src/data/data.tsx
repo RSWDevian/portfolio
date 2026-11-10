@@ -28,51 +28,76 @@ interface ExperienceItem {
   role: string;
   dateRange: string;
   location: string;
+  current: boolean;
   description: string[];
 }
 
 export const experiences: ExperienceItem[] = [
   {
     id: 1,
-    company: "Jadavpur University Mechatronics Club",
+    company: "AR VR Technology Pvt. Ltd.",
     logo: "/JUMTC.jpeg",
-    role: "Technical Coordinator",
-    dateRange: "Jan 2023 - Feb 2026",
-    location: "Onsite",
+    role: "SDE Intern",
+    dateRange: "Jul 2026 - Present(6 months internship)",
+    location: "Remote",
+    current: true,
     description: [
-      "Led cross-functional technical teams across robotics and embedded system projects, coordinating mechanical design, electronics integration, and control system development.",
-      "Oversaw project planning, technical reviews, and milestone tracking for multi-disciplinary student engineering initiatives & manage a team of 100+ members.",
+      "AI Pipeline Development: Architected and deployed an end-to-end streaming Retrieval-Augmented Generation (RAG) pipeline for the Opshiva project, enabling real-time, context-aware AI interactions.",
+      "Speech Model Training: Trained and fine-tuned large-scale speech models, including Codec TTS, a 200M+ parameter F5 TTS model, and Speech-to-Text (STT) systems to optimize voice generation and recognition accuracy.",
+      "Voice-to-Voice Architecture: Engineered a seamless speech-to-speech (s2s) RAG architecture, bridging TTS and STT capabilities to deliver low-latency, conversational AI voice communication.",
     ],
   },
   {
     id: 2,
-    company: "Team OBSERACT",
+    company: "Bhabhar Atomic Research Centre (BARC)",
     logo: "/obseract.jpeg",
-    role: "Team Lead",
-    dateRange: "Sep 2025 - Feb 2026",
-    location: "Onsite",
-    description: ["Assisted in the development of the club's website and internal tools."],
+    role: "Research & Development Intern",
+    dateRange: "Ongoing",
+    location: "Remote",
+    current: true,
+    description: [
+      "Robotics & Motion Systems Research: Researched and designed a holonomic motion drive system for an autonomous wheelchair, presenting the simulated kinematics and motion planning using RoboDK.",
+      "Navigation & SLAM Optimization: Conducted targeted research on Simultaneous Localization and Mapping (SLAM) algorithms specifically optimized for feature-deficient environments, enhancing autonomous navigation reliability.",    ],
   },
   {
     id: 3,
-    company: "Jadavpur University Mechatronics Club",
+    company: "Jadavpur University Mechatronics Club (JUMTC)",
     logo: "/JUMTC.jpeg",
-    role: "Hardware Team Member",
-    dateRange: "Jul 2024 - Aug 2025",
-    location: "Onsite",
-    description: ["Assisted in the development of the club's website and internal tools."],
+    role: "Technical Coordinator",
+    dateRange: "Aug 2025 - Feb 2026",
+    location: "Onsite, Jadavpur University, Kolkata",
+    current: false,
+    description: [
+      "Cross-Functional Team Leadership: Coordinated multidisciplinary teams across hardware, electronics, software, and science divisions to align workflows, troubleshoot integration issues, and successfully deliver complex robotic projects.",
+      "Project Mentorship & Strategic Guidance: Mentored and guided Team Obseract for IRC SPROS 2026 and Team Nidar for Nidar 2026, providing technical oversight and strategic direction to ensure project viability and competition readiness.",
+    ],
   },
   {
     id: 4,
+    company: "Jadavpur University Mechatronics Club (JUMTC)",
+    logo: "/JUMTC.jpeg",
+    role: "Hardware Team Member",
+    dateRange: "Jul 2024 - Aug 2025",
+    location: "Onsite, Jadavpur University, Kolkata",
+    current: false,
+    description: [
+      "Mechanical & Structural Design: Engineered custom hardware components, including \"sandwich-type\" wheel designs and a parallel-connected robotic arm, conducting comprehensive structural analysis to ensure mechanical integrity.",
+      "Motion Simulation & Prototyping: Performed advanced motion simulations to validate kinematics before manufacturing, reducing design iterations and material waste.",
+      "Physical Testing & Coordination: Led physical hardware testing and validation phases, bridging the gap between theoretical simulations and real-world performance while coordinating technical efforts across the team.",
+    ],
+  },
+  {
+    id: 5,
     company: "Automax Robotics Pvt. Ltd",
     logo: "/automax.jpeg",
-    role: "Project Intern",
-    dateRange: "Jun 2025 - Aug 2025",
-    location: "Onsite",
+    role: "Project & Simulation Intern",
+    dateRange: "Jun 2025 - Jul 2025",
+    location: "Onsite, Pune",
+    current: false,
     description: [
-      "Simulated & automated industrial manufacturing workflows with RoboDK.",
-      "Generated offline programs for multi-axis robotic mechanisms to optimize workspace, accuracy and cycle time.",
-      "Conducted process analysis for efficiency, motion synchronization, and collision avoidance in automated manufacturing workflows.",
+      "Simulation & Offline Programming: Conducted automated machine simulations using RoboDK, executing advanced path planning and collision detection through offline programming to optimize robotic workflows and prevent hardware damage.",
+      "System Design & Client Integration: Designed and implemented an 11-DOF (Degrees of Freedom) robotic arm manufacturing system for Taknek Industries, managing the project from initial architecture to post-deployment technical support.",
+      "Full-Stack Web Development: Engineered and launched the official Automax Robotics company website, establishing the digital infrastructure to showcase technical capabilities and improve client engagement.",
     ],
   },
 ];
@@ -109,14 +134,14 @@ export const education: EducationItem[] = [
 ];
 
 export const skills: string[] = [
-  "Rust",
-  "HardHat",
-  "Solidity",
   "Python",
-  "LLM",
+  "RUST",
   "C++",
   "JavaScript",
   "TypeScript",
+  "LLMs",
+  "RAG Pipelines",
+  "Speech Models(TTS/STT)",
   "React",
   "Next.js",
   "Node.js",
@@ -130,10 +155,11 @@ export const skills: string[] = [
   "Arduino",
   "Raspberry Pi",
   "Jetson Orion Nano",
+  "Pixhawk",
   "ROS2",
   "SolidWorks",
   "AutoCAD",
-  "Pixhawk",
+  "RoboDK",
 ];
 
 export interface AchievementItem {
@@ -148,40 +174,19 @@ export interface AchievementItem {
 export const achievements: AchievementItem[] = [
   {
     id: 1,
-    title: "Winner — National Robotics Championship",
-    issuer: "TechFest, IIT",
-    date: "2025",
+    title: "NIDAR Drone Challenge 2025 participated by Team Vihang of JUMTC",
+    issuer: "Jadavpur University, SPROS IRC 2026",
+    date: "Jun 2026",
     type: "Achievement",
-    link: "https://www.linkedin.com/in/abhirupguharoy",
+    link: "https://jadavpuruniversity.in/storage/2026/06/NIDAR-Report.pdf",
   },
   {
     id: 2,
-    title: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services",
-    date: "2025",
-    type: "Certification",
-    link: "https://aws.amazon.com/verification",
-  },
-  {
-    id: 3,
-    title: "Best Hardware Project Award",
-    issuer: "Jadavpur University Mechatronics Club",
-    date: "2024",
+    title: "Team Obseract of JUMTC Achieves International Distinction at IRC 2026",
+    issuer: "Jadavpur University, SPROS IRC 2026",
+    date: "Jun 2026",
     type: "Achievement",
-  },
-  {
-    id: 4,
-    title: "SolidWorks Associate (CSWA)",
-    issuer: "Dassault Systèmes",
-    date: "2024",
-    type: "Certification",
-  },
-  {
-    id: 5,
-    title: "Hackathon Finalist — Smart India Hackathon",
-    issuer: "Government of India",
-    date: "2023",
-    type: "Achievement",
+    link: "https://jadavpuruniversity.in/storage/2026/06/IRC-2026-Report.pdf",
   },
 ];
 

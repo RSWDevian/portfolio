@@ -70,7 +70,7 @@ export default function BookingWidget({ namespace = "15min", link }: BookingWidg
         }}
       >
         <Avatar
-          src="/myImage.jpg"
+          src={`${import.meta.env.BASE_URL}myImage.jpg`}
           alt="AGR"
           sx={{
             width: 32,
