@@ -6,6 +6,7 @@ import Education from "@/components/Education";
 import Achievements from "@/components/Achievements";
 import Skills from "@/components/Skills";
 import Works from "@/components/Work";
+import Blogs from "@/components/Blogs";
 // import GitHubContribution from "@/components/GitHubContribution";
 import Contact from "@/components/Contact";
 
@@ -19,6 +20,7 @@ export default function Home() {
         <Education />
         <Skills />
         <Works />
+        <Blogs />
         {/* <GitHubContribution /> */}
         <Achievements />
         <Contact />
