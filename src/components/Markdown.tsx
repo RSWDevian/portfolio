@@ -35,13 +35,9 @@ function MarkdownImage({
         loading="lazy"
         sx={{
           maxWidth: "100%",
-          width: "100%",
-          maxHeight: 480,
-          objectFit: "contain",
-          borderRadius: 2,
-          border: "1px solid",
-          borderColor: "divider",
+          height: "auto",
           display: "block",
+          mx: "auto",
         }}
       />
       {standalone && alt && (

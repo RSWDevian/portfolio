@@ -10,4 +10,9 @@ export default defineConfig(({ command }) => ({
     },
   },
   base: command === "build" ? "/portfolio/" : "/",
+  server: {
+    proxy: {
+      "/api": "http://localhost:5001",
+    },
+  },
 }));

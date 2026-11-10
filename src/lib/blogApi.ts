@@ -9,8 +9,7 @@ export interface BlogPost {
 }
 
 const API_BASE_URL =
-  (import.meta.env.VITE_BLOG_API_URL as string | undefined) ??
-  "https://api.myportfolio.com/blogs";
+  (import.meta.env.VITE_BLOG_API_URL as string | undefined) || "/api/blogs";
 
 import { developerTestBlog } from "./testBlog";
 

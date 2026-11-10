@@ -1,6 +1,7 @@
 import { Box, Stack, Typography, Chip, Button } from "@mui/material";
 import { ArrowOutward } from "@mui/icons-material";
 import { works } from "@/data/data";
+import { Link } from "react-router-dom";
 
 const TOP_N = 4;
 
@@ -216,8 +217,8 @@ export default function Works() {
         }}
       >
         <Button
-          component="a"
-          href="/works"
+          component={Link}
+          to="/works"
           startIcon={<ArrowOutward fontSize="small" />}
           sx={{
             color: "primary.main",

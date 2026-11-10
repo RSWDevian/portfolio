@@ -64,7 +64,7 @@ export default function BlogDetail() {
   });
 
   return (
-    <Box sx={{ py: 6 }}>
+    <Box sx={{ py: 12 }}>
       <Container maxWidth="md">
         <Button
           component={RouterLink}

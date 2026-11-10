@@ -1,6 +1,7 @@
 import { Box, Stack, Typography, Chip, Button } from "@mui/material";
 import { ArrowOutward } from "@mui/icons-material";
 import { experiences } from "@/data/data";
+import { Link } from "react-router-dom";
 
 export default function Experience() {
   const topThree = experiences.slice(0, 3);
@@ -101,8 +102,8 @@ export default function Experience() {
           }}
         >
           <Button
-            component="a"
-            href="/experience"
+            component={Link}
+            to="/experience"
             startIcon={<ArrowOutward fontSize="small" />}
             sx={{
               color: "primary.main",
